@@ -22,7 +22,7 @@ jobs:
       GO_VERSION: 1.26.0
       HUGO_VERSION: 0.156.0
       NODE_VERSION: 24.13.1
-      TZ: Europe/Oslo
+      TZ: Europe/Berlin
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -75,8 +75,7 @@ jobs:
         with:
           path: ${{ runner.temp }}/hugo_cache
           key: hugo-${{ github.run_id }}
-          restore-keys:
-            hugo-
+          restore-keys: hugo-
       - name: Build the site
         run: |
           hugo build \
@@ -104,3 +103,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
