@@ -2,7 +2,7 @@ name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: ["main"] # Oder "master"
+    branches: ["main"] # Falls dein Haupt-Branch "master" heißt, hier ändern
 
 permissions:
   contents: read
@@ -15,15 +15,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: recursive # Wichtig für Themes!
-          fetch-depth: 0
+        # submodules: recursive wurde hier entfernt, da nicht benötigt
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "latest"
-          extended: true # Meistens nötig für moderne Themes (Sass/SCSS)
+          extended: true # Empfohlen, falls dein Theme SCSS/SASS nutzt
 
       - name: Build
         run: hugo --minify
