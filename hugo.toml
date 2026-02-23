@@ -116,4 +116,6 @@ enableEmoji = true
     contentDir = "content/de"
     languageName = "Deutsch"
 
-
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
