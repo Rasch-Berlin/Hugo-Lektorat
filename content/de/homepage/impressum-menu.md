@@ -1,10 +1,10 @@
 ---
 title: "Impressum"
-weight: 98
+weight: 97
 header_menu_title: "Impressum"
-navigation_menu_title: "Impressum"
-header_menu: false
-# detailed_page_path: /legal/
+#navigation_menu_title: "Imp"
+header_menu: true
+detailed_page_path: impressum
 detailed_page_homepage_content: false
 ---
 Copyright: raschberlin 2026
